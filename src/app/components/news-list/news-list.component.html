@@ -1,1 +1,40 @@
-<p>news-list works!</p>
+<div class="top-news-container">
+    <h5 class="text-muted">Media</h5>
+    <h2>Top News</h2>
+    <div class="filter">
+      <button [ngClass]="{'active': categoryFilterId === 0}" (click)="filterByAllCategory()">All news</button>
+      <ng-container *ngFor="let category of newsCategories">
+       <button [ngClass]="{'active': categoryFilterId === category.id}" (click)="filterByCategory(category.id)">{{category.name}}</button>
+      </ng-container>
+    </div>
+  
+    <div class="news-grid">
+      <div class="news-card" *ngFor="let news of newsItems">
+        <img [src]="news.urlToImage" alt="News image" class="news-image" />
+        <div class="news-info">
+          <h3 (click)="routeToNewsItem(news.id)">{{ news.title }}</h3>
+          <div class="news-meta py-2">
+            <span class="date"><i class="fa-regular fa-calendar-days icon mx-2"></i> {{ news.publishedDate | date:'EEE dd MMM yyyy' }}</span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center px-2">
+            <span class="category text-muted">category</span>
+            <div class="news-actions">
+                <button class="like-btn">
+                    <i class="fa-regular fa-heart icon"></i>
+                </button>
+                <button class="share-btn">
+                    <i class="fa-solid fa-up-right-from-square icon"></i>
+                </button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="viewAll d-flex justify-content-center align-items-center py-5" *ngIf="showAllNews && fiterBtn">
+        <button (click)="ShowAllNews()" class="btn btn-warning px-5 py-3">View All News</button>
+    </div>
+    <div class="viewAll d-flex justify-content-center align-items-center py-5" *ngIf="!showAllNews && fiterBtn">
+        <button (click)="ShowLessNews()" class="btn btn-warning px-5 py-3">Less News</button>
+    </div>
+  </div>
+  

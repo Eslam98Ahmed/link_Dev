@@ -1,0 +1,121 @@
+.top-news-container
+  text-align: center
+  padding: 2rem 8rem
+  h2
+    font-size: 2.5rem
+    margin-bottom: 2.5rem
+    color: #333
+
+  .btn-warning
+     color: white !important  
+
+  .filter
+    display: flex
+    justify-content: center
+    gap: 1rem
+    margin-bottom: 2.5rem
+    flex-wrap: wrap
+
+    button
+      padding: 0.5rem 1.5rem
+      border: none
+      background-color: #f0f0f0
+      cursor: pointer
+      border-radius: 0.5rem
+      color: #333
+      font-weight: 600
+      font-size: 1rem
+
+      &.active
+        background-color: #13BEFF
+        color: #fff
+
+      &:hover
+        background-color: #e0e0e0
+        color: #333
+
+  .news-grid
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    gap: 2rem
+
+    .news-card
+      background-color: #fff
+      border-radius: 0.75rem
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+      overflow: hidden
+      display: flex
+      flex-direction: column
+      transition: transform 0.2s ease
+
+      &:hover
+        transform: scale(1.02)
+
+      .news-image
+        width: 100%
+        height: 220px
+        object-fit: cover
+
+      .news-info
+        padding: 1rem
+        flex-grow: 1
+
+        h3
+          text-align: left
+          font-size: 18px
+          font-weight:600
+          letter-spacing: 0px
+          color: #5E6282
+          cursor: pointer !important
+          
+
+        p
+          font-size: 1rem
+          color: #666
+          margin-bottom: 1rem
+
+        .category
+          background-color: #f0f0f0
+          padding: 0.2rem 0.75rem
+          border-radius: 0.5rem
+          font-size: 0.85rem
+          color: #333 
+
+        .icon
+          font-size :15px
+          color: #13BEFF !important
+        
+
+        .news-meta
+          display: flex
+          justify-content: space-between
+          margin-bottom: 1rem
+          font-size: 0.9rem
+
+          .date
+            text-align: left
+            font-size: 12px
+            font-weight: 400 
+            letter-spacing: 0px
+            color: #707070
+
+          
+
+        .news-actions
+          display: flex
+          gap: 1rem
+
+          button
+            border: none
+            background: none
+            cursor: pointer
+            font-size: 1.2rem
+            color: #0056d2
+
+            &:hover
+              color: #0044b2
+
+            .icon-heart, .icon-share
+              font-size: 1.5rem
+
+    

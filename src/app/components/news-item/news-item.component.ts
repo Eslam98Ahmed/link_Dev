@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-news-item',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news-item.component.sass']
 })
 export class NewsItemComponent implements OnInit {
+  
+  id: number = 0;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute , private _NewsService:NewsService) { }
 
   ngOnInit(): void {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    this.getNewsItemData(this.id);
+
+  }
+  getNewsItemData(id:number){
+    this._NewsService.getNewsItem(id).subscribe((res)=>{
+      console.log(res);
+    })
   }
 
 }
