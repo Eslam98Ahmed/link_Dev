@@ -10,6 +10,7 @@ import { NewsItemComponent } from './components/news-item/news-item.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WhatWeDoComponent } from './components/what-we-do/what-we-do.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     NewsListComponent,
     NewsItemComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    WhatWeDoComponent
   ],
   imports: [
     BrowserModule,

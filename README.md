@@ -18,3 +18,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 4-create structure for news item page and routing 
 
+## Sprint 3:
+
+1- Create Things We Do Section.
+
+2- create footer Section.
+
