@@ -1,1 +1,50 @@
-<p>banner works!</p>
+<header>
+    <nav class="navbar py-3">
+        <div class="navbar-left">
+          <a href="#" class="logo">
+            <img src="assets/img/logo.png" alt="Link Development 25 Years" />
+          </a>
+        </div>
+        <div class="navbar-center">
+          <ul class="nav-links">
+            <li><a routerLink="/home">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="navbar-right">
+          <a href="#" class="login">Login</a>
+          <a href="#" class="signup mx-4">Sign up</a>
+          <div class="lang-dropdown">
+            <button class="lang-btn">EN</button>
+            <ul class="lang-menu">
+              <li><a href="#">EN</a></li>
+              <li><a href="#">AR</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="carousel-container px-4 pt-1">
+        <div *ngFor="let slide of slides; let i = index" class="carousel-slide py-4" [ngClass]="{'active': i === activeSlide}">
+          <div class="slide-content px-5">
+            <div class="marking pb-4" [style.color]="activeColor">{{slide.category | uppercase}}</div>
+            <h1 class="w-50">{{slide.title}}</h1>
+            <p class="w-50" [ngClass]="{'py-4': i != 0 , 'py-5': i ==0}">{{slide.brief}}</p>
+            <div class="actions" [ngClass]="{'mb-2': i == 0}">
+              <button class="btn find-out-more" (click)="RedirectUrl(slide)">Find out more</button>
+              <div class="d-flex align-items-center px-4" (click)="RedirectVideoUrl(slide)">
+                <button class="btn play-demo"><i class="fa-solid fa-play"></i></button>
+                <span class="mx-3">Play Demo</span>
+              </div>
+            </div>
+          </div>
+          <img [src]="slide.imgUrl" alt="Slide image" class="slide-image"/>
+        </div>
+        <div class="indicators w-50 ps-5 me-5">
+          <span *ngFor="let slide of slides; let i = index" class="indicator" [style.backgroundColor]="activeColorSlide(slide)" [ngClass]="{'active-indicator': i === activeSlide}" (click)="selectSlide(i ,slide)"></span>
+        </div>
+      </div>
+      
+</header>

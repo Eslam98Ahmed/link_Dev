@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Banner } from 'src/app/interfaces/banner';
 import { NewsService } from 'src/app/services/news.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { NewsService } from 'src/app/services/news.service';
 })
 export class NewsItemComponent implements OnInit {
   
+  item:any;
   id: number = 0;
 
   constructor(private route: ActivatedRoute , private _NewsService:NewsService) { }
@@ -20,7 +22,7 @@ export class NewsItemComponent implements OnInit {
   }
   getNewsItemData(id:number){
     this._NewsService.getNewsItem(id).subscribe((res)=>{
-      console.log(res);
+      this.item = res;
     })
   }
 

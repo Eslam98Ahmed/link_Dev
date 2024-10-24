@@ -24,3 +24,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 2- create footer Section.
 
+## Sprint 4:
+
+1- Create banner Section and integration with api and add images .
+
+2- create navbar and make it responsive Section.
+
+3- final touch for the project
+
+
+
